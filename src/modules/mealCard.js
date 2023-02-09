@@ -1,8 +1,7 @@
 import like from '../images/heart.svg';
 import postLike from './postLike.js';
 import closeIcon from '../images/x-circle-fill.svg';
-import reservationUI from './reservationUI.js';
-import logo from '../images/meal-logo.png';
+import commentUI from './commentUI.js';
 
 const myCancel = new Image();
 myCancel.src = closeIcon;
@@ -17,7 +16,7 @@ const mealCard = (title, id, image_id, likeNum, artist_title) => {
   const board = document.querySelector('.meals-menu');
 
   const div = document.createElement('div');
-  div.className = 'mealsBoard';
+  div.className = 'mealItem';
   const strDiv = document.createElement('div');
   strDiv.className = 'strDiv';
   const likeDiv = document.createElement('div');
@@ -48,7 +47,6 @@ const mealCard = (title, id, image_id, likeNum, artist_title) => {
     if (e.target.classList.contains('stop')) {
       return;
     }
-    console.log(e.target.previousElementSibling.textContent)
     postLike(e.target.previousElementSibling.textContent);
     const sumlike = e.target.nextElementSibling.textContent;
     e.target.nextElementSibling.textContent = parseInt(sumlike) + 1;
@@ -60,18 +58,17 @@ const mealCard = (title, id, image_id, likeNum, artist_title) => {
 
   buttonComment.addEventListener('click', (e) => {
     overlay.style.display = 'block';
-    console.log(e.target.nextElementSibling);
-    reservationUI(e.target.nextElementSibling.textContent);
+    commentUI(e.target.nextElementSibling.textContent);
   });
 
   cancel.addEventListener('click', (e) => {
     overlay.style.display = 'none';
-    document.querySelector('.reservation-board').innerHTML = '';
+    document.querySelector('.comments-board').innerHTML = '';
   });
 
   cancel.addEventListener('click', () => {
     overlay.style.display = 'none';
-    document.querySelector('.reservation-board').innerHTML = '';
+    document.querySelector('.comments-board').innerHTML = '';
   });
 };
 
