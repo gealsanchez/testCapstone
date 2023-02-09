@@ -11,7 +11,7 @@ const myLike = new Image();
 myLike.src = like;
 myLike.classList = 'imgLike';
 
-const mealCard = (title, id, image_id, likeNum, artist_title) => {
+const mealCard = async (title, id, image_id, likeNum, artist_title) => {
 
   const board = document.querySelector('.meals-menu');
 
