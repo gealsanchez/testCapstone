@@ -1,4 +1,4 @@
-import { mealCounterApi } from "../src/modules/mealCounterApi";
+import { mealCounterApi } from "../modules/mealCounterApi";
 
 describe("Meal counter", () => {
   const mockFetch = jest.fn().mockResolvedValue({
