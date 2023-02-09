@@ -1,7 +1,6 @@
 const URL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/ooCKDNVhVwx5nuC5j8LT/comments';
 
 const postComment = async (name, comment, idMeal) => {
-    console.log('hello from posting ' + idMeal + ' ' + name + ' ' + comment) 
   const response = await fetch(URL, {
     method: 'POST',
     body: JSON.stringify({
