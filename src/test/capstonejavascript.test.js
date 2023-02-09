@@ -1,4 +1,5 @@
 import commentCounter from '../modules/commentCounter';
+import { mealCounterApi } from '../modules/mealCounterApi';
 
 describe('Test methods', () => {
   test('Counting comments', () => {
