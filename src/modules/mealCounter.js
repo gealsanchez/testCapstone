@@ -1,10 +1,8 @@
-import { mealCounterApi } from "./mealCounterApi.js";
-
-const mealCounter = async () => {
-  const response = await mealCounterApi();
-
-  const counterContainer = document.getElementById('meals-counter');
-  counterContainer.textContent = `(${response})`;
-}
-
-export default mealCounter;
+const mealCounter = () => {
+    const counterContainer = document.getElementById('meals-counter');
+    const mealCount = document.getElementsByClassName('mealItem').length;
+    counterContainer.textContent = `(${mealCount})`;
+    return mealCount;
+ }
+ 
+ export default mealCounter;
